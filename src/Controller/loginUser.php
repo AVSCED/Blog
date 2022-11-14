@@ -14,6 +14,5 @@ if( mysqli_num_rows($logged_In)==1){
     $logged_In_ID_Role = mysqli_fetch_assoc($logged_In);
     array_push($_SESSION['data'],$logged_In_ID_Role);
     echo json_encode($_SESSION['data'])  ;
-  //echo $logged_In_Id['ID'] ;
 }
 ?>

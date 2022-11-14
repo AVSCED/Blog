@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Site</title>
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- CSS only -->
   <!-- Font Awesome -->
 
@@ -72,130 +71,59 @@ session_start();
   <!--Main Navigation-->
 
   <!--Main layout-->
-  <main class="my-5">
-    <div class="container">
-      <!--Section: Content-->
-      <section class="text-center">
-        <h4 class="mb-5 text-dark"><strong>Latest posts</strong></h4>
+  <div class="container " >
+    
+    <!--Section: Content-->
+    <section class="text-center" >
+    <div class="row" id="post_Area" >
 
-        <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/002.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/022.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/035.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--Section: Content-->
-
-      <!-- Pagination -->
-      <nav class="my-4" aria-label="...">
-        <ul class="pagination pagination-circle justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
     </div>
-  </main>
+      <!-- <h4 class=" text-dark"><strong>Share Your Thoughts !</strong></h4>
+
+      <div class="form-group ">
+        <label class="fw-bold text-dark">Blog Category:</label>
+
+        <select class="btn btn-outline-dark " id="blog_Category">
+          <option class="btn btn-outline-dark " label="food">Food </option>
+          <option class="btn btn-outline-dark " label="travel">Travel</option>
+          <option class="btn btn-outline-dark " label="health">Health</option>
+          <option class="btn btn-outline-dark " label="lifestyle">Lifestyle </option>
+        </select>
+        <label class="fw-bold text-dark"> Enter Title
+          <input type="text" class="form-control btn-outline-dark" id="blog_Title"></label><br><br>
+        <textarea class="form-control  btn-outline-dark" id="blog_Content" rows="3"></textarea>
+        <div class="custom-file text-center"><br>
+          <p class="btn btn-outline-dark">
+            <input type="file" class="custom-file-input" id="blog_Image">
+          </p>
+        </div>
+        <button class="btn btn-primary" id="post_Btn"> Post</button>
+      </div> -->
+
+    </section>
+    <!--Section: Content-->
+
+    <!-- Pagination -->
+    <!-- <nav class="my-4" aria-label="...">
+      <ul class="pagination pagination-circle justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav> -->
+  </div>
   <!--Main layout-->
 
   <!--Footer-->
-  <footer class="bg-light text-lg-start">
+  <!-- <footer class="bg-light text-lg-start">
     <div class="py-4 text-center">
       <a role="button" class="btn btn-primary btn-lg m-2" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank">
         Learn Bootstrap 5
@@ -207,7 +135,7 @@ session_start();
 
     <hr class="m-0" />
 
-    <div class="text-center py-4 align-items-center">
+    <!-- <div class="text-center py-4 align-items-center">
       <p>Follow MDB on social media</p>
       <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
         <i class="fab fa-youtube"></i>
@@ -221,7 +149,7 @@ session_start();
       <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
         <i class="fab fa-github"></i>
       </a>
-    </div>
+    </div> -->
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
@@ -229,8 +157,8 @@ session_start();
       <a class="text-dark" href="">CEDCOSS Technologies</a>
     </div>
     <!-- Copyright -->
-  </footer>
+  </footer> 
   <!--Footer-->
 </body>
-
+<script src="./js/index.js"></script>
 </html>

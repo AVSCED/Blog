@@ -107,10 +107,6 @@ if (isset($_POST['logout_Session'])) {
       <li class="nav-item">
         <button class="btn btn-outline-white text-dark" id="author_All_Post"><i class="bi bi-eye"></i>Pervious Posts</button>
       </li>
-      <li class="nav-item ">
-        <a class="btn btn-outline-white text-dark" id="reported_Content"><i class="bi bi-exclamation-circle"></i>Reports</a>
-      </li>
-
 
     </ul>
   </nav>
@@ -121,10 +117,13 @@ if (isset($_POST['logout_Session'])) {
 
   <!--Main layout-->
 
-  <div class="container ">
+  <div class="container " style="height: auto">
     
     <!--Section: Content-->
-    <section class="text-center" id="post_Area">
+    <section class="text-center" >
+    <div class="row" id="post_Area" >
+
+    </div>
       <!-- <h4 class=" text-dark"><strong>Share Your Thoughts !</strong></h4>
 
       <div class="form-group ">
@@ -151,7 +150,7 @@ if (isset($_POST['logout_Session'])) {
     <!--Section: Content-->
 
     <!-- Pagination -->
-    <nav class="my-4" aria-label="...">
+    <!-- <nav class="my-4" aria-label="...">
       <ul class="pagination pagination-circle justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -165,7 +164,7 @@ if (isset($_POST['logout_Session'])) {
           <a class="page-link" href="#">Next</a>
         </li>
       </ul>
-    </nav>
+    </nav> -->
   </div>
 
   <!--Main layout-->

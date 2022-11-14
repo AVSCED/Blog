@@ -1,3 +1,15 @@
+<?php 
+session_start();
+
+if (!isset($_SESSION['data'])) {
+  header("Location:../index.php");
+}
+
+if (isset($_POST['logout_Session'])) {
+	session_destroy();
+  header("Location:../index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +18,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Site</title>
 
-    <!-- CSS only -->
+    <!-- Jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- Font Awesome -->
 
     <link
@@ -28,10 +42,6 @@
       rel="stylesheet"
     />
     <!-- MDB -->
-    <script
-      type="text/javascript"
-      src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    ></script>
 
     <link rel="stylesheet" src="../css/adminPanel.css" />
     <style>
@@ -98,12 +108,11 @@
           <ul class="navbar-nav d-flex flex-row">
             <!-- Icons -->
             <li class="nav-item me-3 me-lg-0">
-              <a
-                class="nav-link fw-bold text-dark"
-                href="./View/loginPanel.php"
-              >
-                Logout<i class="fa-solid fa-user-lock"></i>
-              </a>
+            <form method="POST" >
+              <button class="btn btn-outline-white text-dark" style="font-size:1rem;" name="logout_Session">
+                <strong>Logout</strong> &nbsp;<i class="fa-solid fa-user-lock" style="font-size:1.5rem;"></i>
+              </button>
+            </form>
             </li>
           </ul>
         </div>
@@ -113,7 +122,7 @@
 
     <!-- Jumbotron -->
     <div id="intro" class="p-5 text-center bg-light">
-      <h1 class="p-4 h2 text-dark fw-bold">Welcome Admin&nbsp;<i class="bi bi-emoji-smile-fill text-dark h2"></i></h1>
+      <h1 class="p-4 h2 text-dark fw-bold">Welcome Admin &nbsp; <b id="adminName"></b>&nbsp;<i class="bi bi-emoji-smile-fill text-dark h2"></i></h1>
       
     </div>
     <!-- Jumbotron -->
@@ -125,22 +134,14 @@
     >
       <ul class="nav flex-column ">
         <li class="nav-item ">
-          <a class="nav-link text-dark" href="#">Requests<i class="bi bi-stack "></i></a>
+          <button class="btn text-dark" id="requests" >Requests<i class="bi bi-stack "></i></button>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#"
-            >Posts<i class="bi bi-eye-fill"></i></a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link text-dark" href="#">Reports<i class="bi bi-exclamation-circle-fill"></i></a>
+          <button class="btn text-dark" id="usersPosts"
+            >Posts<i class="bi bi-eye-fill"></i></button>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link text-dark"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Users<i class="bi bi-people-fill"></i></a>
+          <button class="btn text-dark" id="userList" >Users<i class="bi bi-people-fill"></i></a>
         </li>
 
       </ul>
@@ -151,38 +152,55 @@
     <!--Main Navigation-->
 
     <!--Main layout-->
-    <main class="my-5">
-      <div class="container">
-        <!--Section: Content-->
-        <section class="text-center">
-          <h4 class="mb-5 text-dark"><strong></strong></h4>
+    <div class="container " style="height: auto">
+    
+    <!--Section: Content-->
+    <section class="text-center" >
+    <div class="row" id="content_Area" >
 
+    </div>
+      <!-- <h4 class=" text-dark"><strong>Share Your Thoughts !</strong></h4>
 
-        </section>
-        <!--Section: Content-->
+      <div class="form-group ">
+        <label class="fw-bold text-dark">Blog Category:</label>
 
-        <!-- Pagination -->
-        <!-- <nav class="my-4" aria-label="...">
-          <ul class="pagination pagination-circle justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
-                >Previous</a
-              >
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active" aria-current="page">
-              <a class="page-link" href="#"
-                >2 <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
-          </ul>
-        </nav> -->
-      </div>
-    </main>
+        <select class="btn btn-outline-dark " id="blog_Category">
+          <option class="btn btn-outline-dark " label="food">Food </option>
+          <option class="btn btn-outline-dark " label="travel">Travel</option>
+          <option class="btn btn-outline-dark " label="health">Health</option>
+          <option class="btn btn-outline-dark " label="lifestyle">Lifestyle </option>
+        </select>
+        <label class="fw-bold text-dark"> Enter Title
+          <input type="text" class="form-control btn-outline-dark" id="blog_Title"></label><br><br>
+        <textarea class="form-control  btn-outline-dark" id="blog_Content" rows="3"></textarea>
+        <div class="custom-file text-center"><br>
+          <p class="btn btn-outline-dark">
+            <input type="file" class="custom-file-input" id="blog_Image">
+          </p>
+        </div>
+        <button class="btn btn-primary" id="post_Btn"> Post</button>
+      </div> -->
+
+    </section>
+    <!--Section: Content-->
+
+    <!-- Pagination -->
+    <!-- <nav class="my-4" aria-label="...">
+      <ul class="pagination pagination-circle justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav> -->
+  </div>
     <!--Main layout-->
 
     <!--Footer-->
@@ -206,4 +224,5 @@
     </footer>
     <!--Footer-->
   </body>
+  <script src="../js/adminPanel.js"></script>
 </html>

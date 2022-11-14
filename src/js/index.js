@@ -1,8 +1,7 @@
 $(document).ready(function(){
     $.ajax({
         type: "post",
-        url: "../Controller/readerPanelLoader.php",
-        data: {action:"laodPage"},
+        url: "../Controller/indexLoader.php",
         dataType: "json",
         success: function (response) {
             console.log(response);
@@ -19,33 +18,19 @@ $(document).ready(function(){
                 e.category +
                 `)</h5>` +
                 e.date +
-                `&emsp; ||&emsp;` +
+                `&emsp; ||&emsp;<i class="bi bi-hand-thumbs-up-fill">` +
                 e.likes +
-                ` <button class="btn btn-secondary likePost" id="${e.postID}"  value="${e.likes}"><i class="bi bi-hand-thumbs-up-fill " ></i>
-                </button><hr>
+                `</i><hr>
             <p class="card-text">` +
                 e.post +
                 `</p><hr>
-            <p>Author:<b>`+e.Name+`</b><p>
+            <p>Author:By<b>`+e.Name+`</b><p>
           </div>
         </div>
       </div>`;
             });
             $("#post_Area").html(string);
+         
         },
       });
-});
-$(document).on("click" , ".likePost" , function(){
-    var postId=$(this).attr("id");
-    var likes=$(this).attr("value");
-    console.log(likes);
-    $.ajax({
-        type: "post",
-        url: "../Controller/readerPanelLoader.php",
-        data: {action:"likePost" ,postId:postId ,likes:likes},
-        success: function (response) {
-            console.log(response);
-            location.reload();
-        }
-    });
 })
