@@ -1,8 +1,11 @@
 <?php
+//Including connection file for query execution
 include '../Config/config.php';
+//To access the data stored in the session
 session_start();
-
+//To identify the exact ajax call for the clicked functionality
 $action = $_POST['action'];
+//To retrieve the user's name who is logged in and display his name
 if ($action == "load") {
     $user_ID = $_SESSION['data'][0]['ID'];
     $logged_In = "SELECT `Name` FROM `users` WHERE ID='$user_ID'";
@@ -12,7 +15,7 @@ if ($action == "load") {
         echo json_encode($logged_In_Name);
     }
 }
-
+//To create a new blog from the author
 if ($action == "blog") {
     $author_ID = $_SESSION['data'][0]['ID'];
     $likes = 0;
@@ -29,7 +32,7 @@ if ($action == "blog") {
         echo ("We've submitted your request to Post Your Blog ,Kindly wait for Admin's Response !");
     }
 }
-
+// To View all previous blogs written by the user
 if ($action == "previous_Blogs") {
     $blog_Array = array();
     $author_ID = $_SESSION['data'][0]['ID'];
@@ -42,7 +45,7 @@ if ($action == "previous_Blogs") {
         echo json_encode($blog_Array);
     }
 }
-
+//To retrieve a previously written blog written by the author for editing
 if ($action == "editPost") {
     $postId = $_POST["postId"];
     $blogContent = "SELECT `postID`, `authorID`, `title`, `post`, `date`, `likes`, `category` FROM `posts` WHERE `postID` = '$postId'";
@@ -52,6 +55,7 @@ if ($action == "editPost") {
         echo json_encode($editContent);
     }
 }
+//To post the edited blog
 if ($action == "edited_blog") {
     $post_Date = date("d/m/Y");
     $post_Date = strval($post_Date);
@@ -67,7 +71,7 @@ if ($action == "edited_blog") {
         echo ("We've submitted your request to Update Your Blog ,Kindly wait for Admin's Response !");
     }
 }
-
+//To delete a previously posted blog by the author
 if($action == "deletBlog"){
     $delete_Post_Id=$_POST["postId"];
     $delete_Post_query="DELETE FROM `posts` WHERE postID='$delete_Post_Id'";

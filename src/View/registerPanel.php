@@ -24,20 +24,15 @@
           <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
             <label class="form-label">Enter Your Name</label>
             <input type="text" id="new_User_Name" class="form-control form-control-lg" required="required" />
-
             <label class="form-label">Email address</label>
             <input type="email" id="new_User_Email" class="form-control form-control-lg" required="required" />
-
             <label class="form-label">Password</label>
             <input type="password" id="new_User_Pass" class="form-control form-control-lg" required="required" />
-
             <label class="form-label">Confirm Password</label>
             <input type="password" id="new_User_CPass" class="form-control form-control-lg" required="required" />
             <br>
-
             <div class="d-flex justify-content-center align-items-center mb-4">
               <!-- Checkbox -->
-
               <label class="form-outline"><strong>Register As --</strong>
               </label>
               <select class="btn btn-primary" id="category" required="required">
@@ -49,7 +44,6 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block" id="registerUser">
               Register
             </button>
-
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
               <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="./loginPanel.php" role="button">

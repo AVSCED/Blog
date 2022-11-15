@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 if (!isset($_SESSION['data'])) {
@@ -6,12 +6,13 @@ if (!isset($_SESSION['data'])) {
 }
 
 if (isset($_POST['logout_Session'])) {
-	session_destroy();
+  session_destroy();
   header("Location:../index.php");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -41,14 +42,11 @@ session_start();
 <body>
   <!-- Top Navbar -->
 
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container-fluid">
       <!-- Navbar brand -->
-
       <img src="./assets/siteLogo.jpeg" height="48" alt="" loading="lazy" style="margin-top: -3px;" />
-
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -57,13 +55,11 @@ session_start();
           <li class="nav-item active">
             <a class="nav-link fw-bold text-dark" aria-current="page" href="#intro">Home</a>
           </li>
-
         </ul>
-
         <ul class="navbar-nav d-flex flex-row">
           <!-- Icons -->
           <li class="nav-item me-3 me-lg-0">
-          <form method="POST" >
+            <form method="POST">
               <button class="btn btn-outline-white text-dark" style="font-size:1rem;" name="logout_Session">
                 <strong>Logout</strong> &nbsp;<i class="fa-solid fa-user-lock" style="font-size:1.5rem;"></i>
               </button>
@@ -74,105 +70,30 @@ session_start();
     </div>
   </nav>
   <!-- Navbar -->
-
   <!-- Jumbotron -->
   <div id="intro" class="p-5  text-center bg-light">
     <h1 class="mb-3 p-4 h2 text-dark fw-bold">Welcome To Our Blog Site Reader <i class="bi bi-emoji-smile-fill text-dark"></i> </h1>
     <p class="mb-3 text-dark">Curate Through our best content !</p>
   </div>
   <!-- Jumbotron -->
-
   <!--Main Navigation-->
-
   <!--Main layout-->
-  <div class="container " >
-    
+  <div class="container ">
     <!--Section: Content-->
-    <section class="text-center" >
-    <div class="row" id="post_Area" >
-
-    </div>
-      <!-- <h4 class=" text-dark"><strong>Share Your Thoughts !</strong></h4>
-
-      <div class="form-group ">
-        <label class="fw-bold text-dark">Blog Category:</label>
-
-        <select class="btn btn-outline-dark " id="blog_Category">
-          <option class="btn btn-outline-dark " label="food">Food </option>
-          <option class="btn btn-outline-dark " label="travel">Travel</option>
-          <option class="btn btn-outline-dark " label="health">Health</option>
-          <option class="btn btn-outline-dark " label="lifestyle">Lifestyle </option>
-        </select>
-        <label class="fw-bold text-dark"> Enter Title
-          <input type="text" class="form-control btn-outline-dark" id="blog_Title"></label><br><br>
-        <textarea class="form-control  btn-outline-dark" id="blog_Content" rows="3"></textarea>
-        <div class="custom-file text-center"><br>
-          <p class="btn btn-outline-dark">
-            <input type="file" class="custom-file-input" id="blog_Image">
-          </p>
-        </div>
-        <button class="btn btn-primary" id="post_Btn"> Post</button>
-      </div> -->
-
+    <section class="text-center">
+      <div class="row" id="post_Area">
+      </div>
     </section>
-    <!--Section: Content-->
-
-    <!-- Pagination -->
-    <!-- <nav class="my-4" aria-label="...">
-      <ul class="pagination pagination-circle justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active" aria-current="page">
-          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav> -->
   </div>
-  <!--Main layout-->
-
-  <!--Footer-->
-  <!-- <footer class="bg-light text-lg-start">
-    <div class="py-4 text-center">
-      <a role="button" class="btn btn-primary btn-lg m-2" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank">
-        Learn Bootstrap 5
-      </a>
-      <a role="button" class="btn btn-primary btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank">
-        Download MDB UI KIT
-      </a>
-    </div>
-
-    <hr class="m-0" />
-
-    <!-- <div class="text-center py-4 align-items-center">
-      <p>Follow MDB on social media</p>
-      <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.facebook.com/mdbootstrap" class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://twitter.com/MDBootstrap" class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div> -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-dark" href="">CEDCOSS Technologies</a>
-    </div>
-    <!-- Copyright -->
-  </footer> 
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-dark" href="https://cedcoss.com/">CEDCOSS Technologies</a>
+  </div>
+  <!-- Copyright -->
+  </footer>
   <!--Footer-->
 </body>
 <script src="../js/readerPanel.js"></script>
+
 </html>

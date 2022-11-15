@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (isset($_POST['resetData'])) {
   session_unset();
@@ -28,14 +28,14 @@ if (isset($_POST['resetData'])) {
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
               <h3 class="mb-3">Sign in</h3>
-             <form>
-              <label class="form-label">Email</label>
+              <form>
+                <label class="form-label">Email</label>
                 <input type="email" id="email" class="form-control form-control-lg" />
                 <label class="form-label">Password</label>
                 <input type="password" id="password" class="form-control form-control-lg" /><br>
                 <button class="btn btn-primary  btn-block" type="submit" id="login">Login</button>
-                </form>
-                <hr class="my-4">
+              </form>
+              <hr class="my-4">
               <a class="btn btn-block btn-primary mb-2" style="background-color: #3b5998;" href="./registerPanel.php">Not a Memeber ? Join Us</a>
             </div>
           </div>
@@ -44,10 +44,11 @@ if (isset($_POST['resetData'])) {
     </div>
   </section>
   <form action="" method="POST">
-        <p style="margin-left:2% ">Reset data:
-            <button style="margin-left:2% " type=submit name="resetData">&#9850;</button>
-        </p>
-    </form>
+    <p style="margin-left:2% ">Reset data:
+      <button style="margin-left:2% " type=submit name="resetData">&#9850;</button>
+    </p>
+  </form>
 </body>
 <script src="../js/loginPanel.js"></script>
+
 </html>
